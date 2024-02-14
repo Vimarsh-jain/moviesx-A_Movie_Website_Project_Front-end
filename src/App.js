@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import {useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
 
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import { getApiConfiguration, getGenres } from "./store/homeSlice";
 
 
@@ -16,12 +16,12 @@ import PageNotFound from "./pages/404/PageNotFound";
 
 function App() {
   const dispatch = useDispatch();
-  const url = useSelector((state) => state.home)
+  // const url = useSelector((state) => state.home)
   // console.log(url)
   useEffect(() => {
     fetchApiConfig();
     genresCall();
-  }, [])
+  },) //may need changes
   const fetchApiConfig = (() => {
     fetchDataFromApi("/configuration")
       .then((res) => {
@@ -52,6 +52,7 @@ function App() {
       dispatch(getGenres(allGenres));
 
   }
+  
   return (
     <BrowserRouter>
       <Header />

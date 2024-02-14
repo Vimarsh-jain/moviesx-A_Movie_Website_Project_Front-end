@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Header from "./components/header/Header";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;

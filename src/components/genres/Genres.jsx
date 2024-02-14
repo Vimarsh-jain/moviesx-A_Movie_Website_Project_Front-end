@@ -11,7 +11,7 @@ const Genres = ({data}) => {
     <div className='genres'>
         {
             data?.map((g)=>{
-                if(!genres[g]?.name) return;
+                if(!genres[g]?.name) return null;
                 return (
                     <div className='genre' key={g}>
                         {genres[g]?.name}
